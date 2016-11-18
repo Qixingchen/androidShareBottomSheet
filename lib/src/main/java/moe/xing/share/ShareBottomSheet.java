@@ -74,7 +74,7 @@ public class ShareBottomSheet {
         return new ShareBottomSheet(activity, WechatID, onlyTecent);
     }
 
-    private void ShareWeb(String title, String url, String thumbImageUrl, String desc) {
+    public void ShareWeb(String title, String url, String thumbImageUrl, String desc) {
         PackageManager pm = mActivity.getPackageManager();
         Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
