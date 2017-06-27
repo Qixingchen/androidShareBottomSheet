@@ -1,18 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.sdk_version
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "moe.xing.share.sample"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion rootProject.ext.sdk_version
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+    }
+    dataBinding {
+        enabled = true
     }
     buildTypes {
         release {
@@ -28,7 +31,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     testCompile 'junit:junit:4.12'
 }
